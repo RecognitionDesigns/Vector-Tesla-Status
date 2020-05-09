@@ -97,7 +97,7 @@ async def main():
                 robot.behavior.say_text('you may want to consider charging up' + (v.display_name) + '. Touch my back sensor to open the charge port', True, 1.1)
                 while True:
                     if robot.touch.last_sensor_reading.is_being_touched:
-                        robot.audio.stream_wav_file("Sounds/Robot_blip_low.wav", 85)
+                        robot.audio.stream_wav_file("sounds/Robot_blip_low.wav", 85)
                         await (v.controls.open_charge_port())
                         print('Charge Port Opened')
                         robot.behavior.say_text('Charge Port Opened')
@@ -116,7 +116,7 @@ async def main():
                 while True:
                     if robot.touch.last_sensor_reading.is_being_touched:
                         await v.controls._vehicle._command('door_unlock')
-                        robot.audio.stream_wav_file("Sounds/Robot_blip_low.wav", 85)
+                        robot.audio.stream_wav_file("sounds/Robot_blip_low.wav", 85)
                         print('Doors unlocked')
                         robot.behavior.say_text('doors unlocked')
                         time.sleep(180)
